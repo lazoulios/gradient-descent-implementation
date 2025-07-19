@@ -19,7 +19,14 @@ def compute_gradient(x,y,m,w,b,a,num_iter):
         cost = cc.compute_cost(x, y, m, w, b)
         j_hist.append(cost)
 
+        if np.isinf(cost):
+            print("Diverging... possible issue: learning rate too high, gradients exploding, or bad initialization.")
+            print(f"Stopping training at iteration no.{i}")
+            print(f"Current w = {w}, b = {b}, cost = {cost}")
+            break
+
         if i%100==0: #testing the cost, w and b every once in a while to make sure in not overshooting
             print(f"at {i}th iteration cost: {cost}, w: {w}, b: {b}")
+            
 
     return w,b,j_hist
