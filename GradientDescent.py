@@ -25,15 +25,15 @@ num_iter = int(input('Enter number of iterations for gradient descent: '))
 #running gradient descent for the computations of the parameters
 w_final, b_final, cost_history = cg.compute_gradient(x_norm, y, m, w, b, a, num_iter)
 
-#computing the model wiht the final parameters
-f_wb = cm.compute_model(x_norm,w_final,b_final)
+#computing the model wiht the final parameters (first with normalized values, finally with unscaled for clearance)
+f_wb_normalized = cm.compute_model(x_norm,w_final,b_final)
 
 #setup for the two plots
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
 
 #plotting the prediction model
-ax1.plot(x_norm,f_wb,c='b',label='Prediction')
-ax1.scatter(x_norm, y, marker='x', c="red")
+ax1.plot(x,f_wb_normalized,c='b',label='Prediction')
+ax1.scatter(x, y, marker='x', c="red")
 ax1.set_xlabel("x")
 ax1.set_title("Testing Gradient Descent")
 ax1.legend()
