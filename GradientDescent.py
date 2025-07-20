@@ -31,7 +31,7 @@ f_wb_normalized = cm.compute_model(x_norm,w_final,b_final)
 #setup for the two plots
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
 
-#plotting the prediction model
+#plotting the prediction model (with unscaled values for x)
 ax1.plot(x,f_wb_normalized,c='b',label='Prediction')
 ax1.scatter(x, y, marker='x', c="red")
 ax1.set_xlabel("x")
