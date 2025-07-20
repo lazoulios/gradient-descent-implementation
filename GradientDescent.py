@@ -13,7 +13,7 @@ w = 0
 b = 0
 
 #input for learning rate and # of iterations
-a = float(input('Enter leaning rate of gradient descent: (suggested learning rate: 0.0001)'))
+a = float(input('Enter leaning rate of gradient descent (suggested learning rate: 0.0009): '))
 num_iter = int(input('Enter number of iterations for gradient descent: '))
 
 #running gradient descent for the computations of the parameters
