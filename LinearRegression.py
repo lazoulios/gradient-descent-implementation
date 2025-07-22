@@ -8,7 +8,6 @@ import pandas as pd
 
 def linearRegression():
     #importing the csv values
-    #TODO: Add multi linear functionality (more features) 
     data = pd.read_csv("gradient-descent-implementation/house_data.csv")
 
     x = data['SquareFootage'].values
