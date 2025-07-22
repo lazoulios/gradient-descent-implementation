@@ -3,10 +3,14 @@ import numpy as np
 import ComputeModel as cm
 import ComputeCost as cc
 import ComputeGradient as cg
+import pandas as pd
 
+#importing the csv values
 #TODO: Add multi linear functionality (more features) 
-x = np.array([12, 25, 30, 42, 73, 15, 24, 26, 53, 72, 84, 16])
-y = np.array([10, 57, 30, 74, 14, 37, 90, 27 ,38 ,49, 42, 69])
+data = pd.read_csv("gradient-descent-implementation/house_data.csv")
+
+x = data['SquareFootage'].values
+y = data['Price'].values
 
 #normalization of the feature
 mu = np.mean(x,axis=0)
