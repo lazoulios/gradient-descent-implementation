@@ -6,7 +6,7 @@ import ComputeGradient as cg
 import pandas as pd
 
 
-def linearRegression():
+def linearRegression() -> None:
     #importing the csv values
     data = pd.read_csv("gradient-descent-implementation/house_data.csv")
 
@@ -30,7 +30,7 @@ def linearRegression():
     #running gradient descent for the computations of the parameters
     w_final, b_final, cost_history = cg.compute_gradient(x_norm, y, m, w, b, a, num_iter)
 
-    #computing the model wiht the final parameters (first with normalized values, finally with unscaled for clearance)
+    #prediction using normalized model, but plotted against original x at the end for clarity
     f_wb_normalized = cm.compute_model(x_norm,w_final,b_final)
 
     #setup for the two plots

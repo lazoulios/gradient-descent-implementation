@@ -8,3 +8,7 @@ modeSelection = int(input('Enter your Selection: '))
 
 if modeSelection == 1:
     LR.linearRegression()
+elif modeSelection == 2:
+    x=2
+else:
+    print("Invalid Mode Selected. Terminating...")
