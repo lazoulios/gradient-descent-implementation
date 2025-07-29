@@ -16,15 +16,16 @@ def linearRegression() -> None:
     #normalization of the feature
     mu = np.mean(x,axis=0)
     sigma = np.std(x,axis=0)
-    x_norm = (x-mu)/sigma
+    x = x.reshape(-1, 1) #reshaping it into 1d 
+    x_norm = ((x-mu)/sigma)
 
-    m = len(x_norm) #lenght of arrays
+    m = len(x_norm) #lenght of the array
 
-    w = 0
+    w = np.zeros(x.shape[1])
     b = 0
 
     #input for learning rate and # of iterations
-    a = float(input('Enter leaning rate of gradient descent (suggested learning rate: 0.0009): '))
+    a = float(input('Enter leaning rate of gradient descent:'))
     num_iter = int(input('Enter number of iterations for gradient descent: '))
 
     #running gradient descent for the computations of the parameters
@@ -54,3 +55,5 @@ def linearRegression() -> None:
     plt.suptitle("Gradient Descent Results", fontsize=14)
     plt.tight_layout()
     plt.show()
+
+linearRegression()

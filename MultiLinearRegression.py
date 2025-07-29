@@ -1,8 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
-import ComputeMultiLinearModel as cmlm
+import ComputeModel as cm
 import ComputeCost as cc
-import ComputeMultiLinearGradient as cmlg
 import pandas as pd
 
 
@@ -19,10 +18,10 @@ def multiLinearRegression():
 
     m = len(X_norm) #lenght of arrays
 
-    w = np.array([0, 0, 0])
+    w = np.zeros(X.shape[1])
     b = 0
 
-    f = cmlm.compute_model(X[1],w,b)
+    f = cm.compute_model(X,w,b)
     
     #input for learning rate and # of iterations
     a = float(input('Enter leaning rate of gradient descent (suggested learning rate: 0.0009): '))
