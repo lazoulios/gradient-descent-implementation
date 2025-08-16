@@ -2,6 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import ComputeModel as cm
 import ComputeCost as cc
+import ComputeGradient as cg
 import pandas as pd
 
 
@@ -26,11 +27,16 @@ def multiLinearRegression():
     #input for learning rate and # of iterations
     a = float(input('Enter leaning rate of gradient descent (suggested learning rate: 0.0009): '))
     num_iter = int(input('Enter number of iterations for gradient descent: '))
-    '''
+    
     #running gradient descent for the computations of the parameters
-    w_final, b_final, cost_history = cmlg.compute_gradient(X_norm, y, m, w, b, a, num_iter)
+    w_final, b_final, cost_history = cg.compute_gradient(X_norm, y, m, w, b, a, num_iter)
 
     #computing the model wiht the final parameters (first with normalized values, finally with unscaled for clearance)
-    f_wb_normalized = cmlm.compute_multi_linear_model(X_norm,w_final,b_final)
-    '''
-a = multiLinearRegression()
+    f_wb_normalized = cm.compute_model(X_norm,w_final,b_final)
+    
+    plt.plot(range(len(cost_history)), cost_history, c="green")
+    plt.title("Cost vs Iterations")
+    plt.xlabel("Iteration")
+    plt.ylabel("Cost")
+    plt.grid(True)
+    plt.show()

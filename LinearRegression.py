@@ -5,7 +5,6 @@ import ComputeCost as cc
 import ComputeGradient as cg
 import pandas as pd
 
-
 def linearRegression() -> None:
     #importing the csv values
     data = pd.read_csv("gradient-descent-implementation/house_data.csv")
@@ -55,5 +54,3 @@ def linearRegression() -> None:
     plt.suptitle("Gradient Descent Results", fontsize=14)
     plt.tight_layout()
     plt.show()
-
-linearRegression()
