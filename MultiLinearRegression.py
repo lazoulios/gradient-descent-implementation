@@ -8,7 +8,7 @@ import pandas as pd
 
 def multiLinearRegression():
     #importing the csv values
-    data = pd.read_csv("gradient-descent-implementation/house_data_multi_feature.csv")
+    data = pd.read_csv("house_data_multi_feature.csv")
     X = data[['SquareFootage', 'Bedrooms','HouseAge']].values
     y = data['Price'].values
 

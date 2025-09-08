@@ -7,7 +7,7 @@ import pandas as pd
 
 def linearRegression() -> None:
     #importing the csv values
-    data = pd.read_csv("gradient-descent-implementation/house_data.csv")
+    data = pd.read_csv("house_data.csv")
 
     x = data['SquareFootage'].values
     y = data['Price'].values
